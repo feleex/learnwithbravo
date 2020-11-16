@@ -1,6 +1,7 @@
 package com.felix.springmvcdemo.layout;
 
 //import org.openjdk.jol;
+
 import org.openjdk.jol.info.ClassLayout;
 
 /**
@@ -8,10 +9,13 @@ import org.openjdk.jol.info.ClassLayout;
  * @date 2020-10-28 23:45
  */
 public class ObjectLayout {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
         Object o=new Object();
         System.out.println("ddd");
-        System.out.println(ClassLayout.parseInstance(o).toPrintable());
+//        Class clazz=ObjectLayout.class.getClassLoader().loadClass("org.openjdk.jol.info.ClassLayout");
+        System.out.println("clazz");
+        String ousting= ClassLayout.parseInstance(o).toPrintable();
+        System.out.println(ousting);
 //        ClassLayout.parseInstance(o).toPrintable();
     }
 }
